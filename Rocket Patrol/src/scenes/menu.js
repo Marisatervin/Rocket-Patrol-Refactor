@@ -20,7 +20,7 @@ class Menu extends Phaser.Scene {
         this.starnebula = this.add.tileSprite(0, 0, 640, 480, 'starnebula').setOrigin(0, 0);
 
         let menuConfig = {
-            fontFamily: 'Courier',
+            fontFamily: 'Sci_fied',
             fontSize: '28px',
             //backgroundColor: '#F3B141',
             color: '#fcfcf5',
