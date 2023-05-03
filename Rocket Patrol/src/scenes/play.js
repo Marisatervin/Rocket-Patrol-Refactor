@@ -8,11 +8,13 @@ class Play extends Phaser.Scene {
         this.load.image('spaceship', './assets/Spaceship.png');
         this.load.image('stealthship', './assets/stealthship.png');
         this.load.image('starnebula', './assets/starnebula.png');
+        this.load.image('asteroids', './assets/asteroids.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
     }
 
     create() {
         this.starfield = this.add.tileSprite(0, 0, 640, 480, 'starnebula').setOrigin(0, 0);
+        this.asteroids = this.add.tileSprite(0, 0, 640, 480, 'asteroids').setOrigin(0, 0);
 
         this.sound.play('sfx_music');
 
@@ -100,6 +102,7 @@ class Play extends Phaser.Scene {
         }
 
         this.starfield.tilePositionX -= 4;  // update tile sprite
+        this.asteroids.tilePositionX -= 6;
 
         if(!this.gameOver) {
             this.p1Rocket.update();             // update p1
