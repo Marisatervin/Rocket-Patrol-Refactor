@@ -83,6 +83,19 @@ class Play extends Phaser.Scene {
         // GAME OVER flag
         this.gameOver = false;
 
+        let clockConfig = {
+            fontFamily: 'Sci_fied',
+            fontSize: '28px',
+            backgroundColor: '#000000',
+            color: '#fcfcf5',
+            align: 'right',
+            padding: {
+                top: 5,
+                bottom: 5,
+            },
+            fixedWidth: 100
+        }
+
         // 60-second play clock
         scoreConfig.fixedWidth = 0;
         this.clock = this.time.delayedCall(game.settings.gameTimer, () => {
@@ -90,6 +103,8 @@ class Play extends Phaser.Scene {
             this.add.text(game.config.width/2, game.config.height/2 + 64, 'Press (R) to Restart or ← to Menu', scoreConfig).setOrigin(0.5);
             this.gameOver = true;
         }, null, this);
+
+        this.clockTime = this.add.text(game.config.width/2, borderUISize + borderPadding*2, this.clock, clockConfig);
     }
 
     update() {
@@ -103,6 +118,8 @@ class Play extends Phaser.Scene {
 
         this.starfield.tilePositionX -= 4;  // update tile sprite
         this.asteroids.tilePositionX -= 6;
+
+        this.clockTime.text = Math.floor((this.clock.getRemaining()/1000));
 
         if(!this.gameOver) {
             this.p1Rocket.update();             // update p1
