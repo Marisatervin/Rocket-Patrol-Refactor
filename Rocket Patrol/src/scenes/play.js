@@ -29,10 +29,23 @@ class Play extends Phaser.Scene {
         this.ship01.animations.add(
             'flying',
             Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            2,
             true
         ); 
         this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
+        this.ship02.animations.add(
+            'flying',
+            Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            2,
+            true
+        ); 
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
+        this.ship03.animations.add(
+            'flying',
+            Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            2,
+            true
+        ); 
 
         this.ship04 = new Stealthship(this, game.config.width, borderUISize*6 + borderPadding*4, 'stealthship', 0, 10).setOrigin(0,0);
 
