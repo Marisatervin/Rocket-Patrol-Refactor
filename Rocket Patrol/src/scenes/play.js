@@ -5,7 +5,7 @@ class Play extends Phaser.Scene {
 
     preload() {
         this.load.image('rocket', './assets/Rocket.png');
-        this.load.atlas('spaceship', './assets/Spaceship.png', 'assets/sprites.json');
+        this.load.atlas('spaceship', './assets/Spaceship.png');
         this.load.image('stealthship', './assets/stealthship.png');
         this.load.image('starnebula', './assets/starnebula.png');
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
@@ -26,26 +26,26 @@ class Play extends Phaser.Scene {
         this.p1Rocket = new Rocket(this, game.config.width/2, game.config.height - borderUISize - borderPadding, 'rocket').setOrigin(0.5, 0);
         
         this.ship01 = new Spaceship(this, game.config.width + borderUISize*6, borderUISize*4, 'spaceship', 0, 30).setOrigin(0, 0);
-        this.ship01.animations.add(
-            'flying',
-            Phaser.Animation.generateFrameNumbers('flying', 1, 3),
-            2,
-            true
-        ); 
+        //this.ship01.animations.add(
+            //'flying',
+            //Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            //2,
+            //true
+        //); 
         this.ship02 = new Spaceship(this, game.config.width + borderUISize*3, borderUISize*5 + borderPadding*2, 'spaceship', 0, 20).setOrigin(0,0);
-        this.ship02.animations.add(
-            'flying',
-            Phaser.Animation.generateFrameNumbers('flying', 1, 3),
-            2,
-            true
-        ); 
+        //this.ship02.animations.add(
+            //'flying',
+            //Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            //2,
+            //true
+        //); 
         this.ship03 = new Spaceship(this, game.config.width, borderUISize*6 + borderPadding*4, 'spaceship', 0, 10).setOrigin(0,0);
-        this.ship03.animations.add(
-            'flying',
-            Phaser.Animation.generateFrameNumbers('flying', 1, 3),
-            2,
-            true
-        ); 
+        //this.ship03.animations.add(
+            //'flying',
+            //Phaser.Animation.generateFrameNumbers('flying', 1, 3),
+            //2,
+            //true
+        //); 
 
         this.ship04 = new Stealthship(this, game.config.width, borderUISize*6 + borderPadding*4, 'stealthship', 0, 10).setOrigin(0,0);
 
