@@ -49,7 +49,7 @@ class Play extends Phaser.Scene {
             //true
         //); 
 
-        this.ship04 = new Stealthship(this, game.config.width, borderUISize*6 + borderPadding*4, 'stealthship', 0, 10).setOrigin(0,0);
+        this.ship04 = new Stealthship(this, game.config.width, borderUISize*6 + borderPadding*4, 'stealthship', 0, 40).setOrigin(0,0);
 
         keyF = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F);
         keyR = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.R);
